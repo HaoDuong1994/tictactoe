@@ -1,0 +1,17 @@
+.row {
+  display: flex;
+}
+.box {
+  width: 180px;
+  height: 180px;
+  background-color: rgb(63, 103, 103);
+  color: bisque;
+  border: solid 4px floralwhite;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.box:hover {
+  cursor: pointer;
+}
