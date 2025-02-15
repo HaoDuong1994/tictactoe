@@ -1,20 +1,10 @@
 import styles from "./Board.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import cross from "../../../Img/pngtree-red-cross-paint-clipart-transparent-background-vector-png-image_7110618.png";
 import circle from "../../../Img/pngimg.com - circle_PNG63.png";
+import checkWin from "../../../Service/checkResultGame";
 function Board() {
-  const [resultGame, setResultGame] = useState([
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-  ]);
-  console.log(resultGame);
+  const [resultGame, setResultGame] = useState(Array(9).fill(null));
   const [count, setCount] = useState(0);
   const boxClick = (e, num) => {
     let newArray = [...resultGame];
@@ -31,6 +21,9 @@ function Board() {
       setCount(count + 1);
     }
   };
+  useEffect(() => {
+    checkWin(resultGame);
+  }, [resultGame]);
   return (
     <div>
       <div className={styles.row}>
