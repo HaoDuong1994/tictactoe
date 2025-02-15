@@ -22,7 +22,8 @@ function Board() {
     }
   };
   useEffect(() => {
-    checkWin(resultGame);
+    const winner = checkWin(resultGame);
+    console.log(winner);
   }, [resultGame]);
   return (
     <div>
