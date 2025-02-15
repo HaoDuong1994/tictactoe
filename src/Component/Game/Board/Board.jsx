@@ -1,12 +1,14 @@
 import styles from "./Board.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import cross from "../../../Img/pngtree-red-cross-paint-clipart-transparent-background-vector-png-image_7110618.png";
 import circle from "../../../Img/pngimg.com - circle_PNG63.png";
 import checkWin from "../../../Service/checkResultGame";
 function Board() {
   const [resultGame, setResultGame] = useState(Array(9).fill(null));
   const [count, setCount] = useState(0);
+  const [endGame, setEndGame] = useState(false);
   const boxClick = (e, num) => {
+    if (endGame) return;
     let newArray = [...resultGame];
     if (count % 2 === 0) {
       e.target.innerHTML = `<img src='${cross}'/>`;
@@ -24,6 +26,11 @@ function Board() {
   useEffect(() => {
     const winner = checkWin(resultGame);
     console.log(winner);
+    if (winner) {
+      setEndGame(true);
+    } else {
+      setEndGame(false);
+    }
   }, [resultGame]);
   return (
     <div>
@@ -78,6 +85,7 @@ function Board() {
             boxClick(e, 8);
           }}></div>
       </div>
+      <div>Hello</div>
     </div>
   );
 }

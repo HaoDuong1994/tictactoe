@@ -6,7 +6,6 @@ import Header from "./Component/Header/Header";
 import Game from "./Component/Game/Game";
 function App() {
   const [count, setCount] = useState(0);
-
   return (
     <div className="container">
       <Header />
