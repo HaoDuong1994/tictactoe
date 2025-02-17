@@ -4,13 +4,14 @@ import cross from "../../../Img/pngtree-red-cross-paint-clipart-transparent-back
 import circle from "../../../Img/pngimg.com - circle_PNG63.png";
 import checkWin from "../../../Service/checkResultGame";
 import { useContext } from "react";
+import { Context } from "../../../Util/GlobalContext";
 function Board() {
   const [resultGame, setResultGame] = useState(Array(9).fill(null));
   const [count, setCount] = useState(0);
   const [endGame, setEndGame] = useState(false);
   const [winner, setWinner] = useState(false);
-  const [nameWinner, setNameWinner] = useState("");
-
+  const value = useContext(Context);
+  const { setNameWinner, nameWinner } = value;
   const boxClick = (e, num) => {
     if (endGame) return;
     let newArray = [...resultGame];
@@ -91,7 +92,6 @@ function Board() {
             boxClick(e, 8);
           }}></div>
       </div>
-      {nameWinner ? <div>Chúc mừng {nameWinner}đã chiến thắng</div> : null}
     </div>
   );
 }

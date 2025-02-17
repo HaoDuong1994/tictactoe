@@ -1,3 +1,14 @@
 .container {
   font-size: 40px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 40px;
+    width: 40px;
+  }
+  span {
+    color: aqua;
+    font-size: 50px;
+  }
 }
