@@ -1,6 +1,12 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 const Context = createContext();
 function GlobalContext({ children }) {
-  return <Context.Provider value={1}>{children}</Context.Provider>;
+  const [nameWinner, setNameWinner] = useState("");
+  const globalValue = {
+    nameWinner,
+    setNameWinner,
+  };
+  return <Context.Provider value={globalValue}>{children}</Context.Provider>;
 }
 export default GlobalContext;
+export { Context };
