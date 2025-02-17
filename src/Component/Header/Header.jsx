@@ -18,7 +18,7 @@ function Header() {
       </div>
     );
   } else {
-    return <div className={styles.container}>Tic tac toe Game</div>;
+    return <div className={styles.container}>Tic Tac Toe Game</div>;
   }
 }
 export default Header;

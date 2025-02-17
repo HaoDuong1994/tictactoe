@@ -6,12 +6,11 @@ import checkWin from "../../../Service/checkResultGame";
 import { useContext } from "react";
 import { Context } from "../../../Util/GlobalContext";
 function Board() {
-  const [resultGame, setResultGame] = useState(Array(9).fill(null));
   const [count, setCount] = useState(0);
   const [endGame, setEndGame] = useState(false);
   const [winner, setWinner] = useState(false);
   const value = useContext(Context);
-  const { setNameWinner, nameWinner } = value;
+  const { setNameWinner, nameWinner, resultGame, setResultGame } = value;
   const boxClick = (e, num) => {
     if (endGame) return;
     let newArray = [...resultGame];
