@@ -9,7 +9,15 @@ function Board() {
   const [endGame, setEndGame] = useState(false);
   const [winner, setWinner] = useState(false);
   const value = useContext(Context);
-  const { setNameWinner, resultGame, setResultGame, count, setCount } = value;
+  const {
+    whoWin,
+    setWhoWin,
+    setNameWinner,
+    resultGame,
+    setResultGame,
+    count,
+    setCount,
+  } = value;
   const boxClick = (e, index) => {
     if (endGame) return;
     if (count % 2 === 0) {
@@ -31,6 +39,9 @@ function Board() {
       setEndGame(true);
       setWinner(true);
       setNameWinner(winner);
+      let newArrayWhoWin = [...whoWin];
+      newArrayWhoWin.push(winner);
+      setWhoWin(newArrayWhoWin);
     } else {
       setEndGame(false);
       setWinner(false);

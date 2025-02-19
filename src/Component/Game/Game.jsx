@@ -7,7 +7,7 @@ function Game() {
     <div className={styles.container}>
       <WinnerTitle styles={styles} />
       <Board />
-      <div className={styles.history}>History</div>
+      <History styles={styles} />
     </div>
   );
 }
