@@ -6,11 +6,17 @@ import checkWin from "../../../Service/checkResultGame";
 import { useContext } from "react";
 import { Context } from "../../../Util/GlobalContext";
 function Board() {
-  const [count, setCount] = useState(0);
   const [endGame, setEndGame] = useState(false);
   const [winner, setWinner] = useState(false);
   const value = useContext(Context);
-  const { setNameWinner, nameWinner, resultGame, setResultGame } = value;
+  const {
+    setNameWinner,
+    nameWinner,
+    resultGame,
+    setResultGame,
+    count,
+    setCount,
+  } = value;
   const boxClick = (e, num) => {
     if (endGame) return;
     let newArray = [...resultGame];
@@ -27,70 +33,82 @@ function Board() {
       setCount(count + 1);
     }
   };
-  useEffect(() => {
-    const winner = checkWin(resultGame);
-    if (winner) {
-      setEndGame(true);
-      setWinner(true);
-      setNameWinner(winner);
-    } else {
-      setEndGame(false);
-      setWinner(false);
-    }
-  }, [resultGame]);
+  // useEffect(() => {
+  //   const winner = checkWin(resultGame);
+  //   if (winner) {
+  //     setEndGame(true);
+  //     setWinner(true);
+  //     setNameWinner(winner);
+  //   } else {
+  //     setEndGame(false);
+  //     setWinner(false);
+  //   }
+  // }, [resultGame]);
   return (
-    <div>
-      <div className={styles.row}>
-        <div
-          className={styles.box}
-          onClick={(e) => {
-            boxClick(e, 0);
-          }}></div>
-        <div
-          className={styles.box}
-          onClick={(e) => {
-            boxClick(e, 1);
-          }}></div>
-        <div
-          className={styles.box}
-          onClick={(e) => {
-            boxClick(e, 2);
-          }}></div>
-      </div>
-      <div className={styles.row}>
-        <div
-          className={styles.box}
-          onClick={(e) => {
-            boxClick(e, 3);
-          }}></div>
-        <div
-          className={styles.box}
-          onClick={(e) => {
-            boxClick(e, 4);
-          }}></div>
-        <div
-          className={styles.box}
-          onClick={(e) => {
-            boxClick(e, 5);
-          }}></div>
-      </div>
-      <div className={styles.row}>
-        <div
-          className={styles.box}
-          onClick={(e) => {
-            boxClick(e, 6);
-          }}></div>
-        <div
-          className={styles.box}
-          onClick={(e) => {
-            boxClick(e, 7);
-          }}></div>
-        <div
-          className={styles.box}
-          onClick={(e) => {
-            boxClick(e, 8);
-          }}></div>
-      </div>
+    // <div>
+    //   <div className={styles.row}>
+    //     <div
+    //       className={styles.box}
+    //       onClick={(e) => {
+    //         boxClick(e, 0);
+    //       }}></div>
+    //     <div
+    //       className={styles.box}
+    //       onClick={(e) => {
+    //         boxClick(e, 1);
+    //       }}></div>
+    //     <div
+    //       className={styles.box}
+    //       onClick={(e) => {
+    //         boxClick(e, 2);
+    //       }}></div>
+    //   </div>
+    //   <div className={styles.row}>
+    //     <div
+    //       className={styles.box}
+    //       onClick={(e) => {
+    //         boxClick(e, 3);
+    //       }}></div>
+    //     <div
+    //       className={styles.box}
+    //       onClick={(e) => {
+    //         boxClick(e, 4);
+    //       }}></div>
+    //     <div
+    //       className={styles.box}
+    //       onClick={(e) => {
+    //         boxClick(e, 5);
+    //       }}></div>
+    //   </div>
+    //   <div className={styles.row}>
+    //     <div
+    //       className={styles.box}
+    //       onClick={(e) => {
+    //         boxClick(e, 6);
+    //       }}></div>
+    //     <div
+    //       className={styles.box}
+    //       onClick={(e) => {
+    //         boxClick(e, 7);
+    //       }}></div>
+    //     <div
+    //       className={styles.box}
+    //       onClick={(e) => {
+    //         boxClick(e, 8);
+    //       }}></div>
+    //   </div>
+    // </div>
+    <div className={styles.container}>
+      {console.log(Array(9))}
+      <div className={styles.box}>Hello</div>
+      <div className={styles.box}>Hello</div>
+      <div className={styles.box}>Hello</div>
+      <div className={styles.box}>Hello</div>
+      <div className={styles.box}>Hello</div>
+      <div className={styles.box}>Hello</div>
+      <div className={styles.box}>Hello</div>
+      <div className={styles.box}>Hello</div>
+      <div className={styles.box}>Hello</div>
     </div>
   );
 }

@@ -4,8 +4,9 @@ import styles from "./Game.module.css";
 function Game() {
   return (
     <div className={styles.container}>
+      <div className={styles.empty}>hello</div>
       <Board />
-      <History />
+      <div className={styles.history}>History</div>
     </div>
   );
 }

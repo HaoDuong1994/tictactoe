@@ -1,3 +1,13 @@
 .container {
   display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.history {
+  width: 30%;
+  background-color: aqua;
+}
+.empty {
+  background-color: rgb(185, 132, 62);
+  width: 30%;
 }

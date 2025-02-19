@@ -1,4 +1,4 @@
-.row {
+/* .row {
   display: flex;
 }
 .box {
@@ -14,4 +14,14 @@
 }
 .box:hover {
   cursor: pointer;
+} */
+.container {
+  width: 30%;
+  display: grid;
+  grid-template-columns: repeat(3, 10vw);
+  grid-template-rows: repeat(3, 10vw);
+}
+.box {
+  background-color: rgb(102, 123, 123);
+  border: solid;
 }
