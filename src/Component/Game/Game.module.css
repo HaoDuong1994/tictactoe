@@ -7,7 +7,18 @@
   width: 30%;
   background-color: aqua;
 }
-.empty {
-  background-color: rgb(185, 132, 62);
+.titleWinner {
   width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  img {
+    height: 40px;
+    width: 40px;
+  }
+  span {
+    color: aqua;
+    margin: 5px;
+  }
 }

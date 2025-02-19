@@ -9,14 +9,7 @@ function Board() {
   const [endGame, setEndGame] = useState(false);
   const [winner, setWinner] = useState(false);
   const value = useContext(Context);
-  const {
-    setNameWinner,
-    nameWinner,
-    resultGame,
-    setResultGame,
-    count,
-    setCount,
-  } = value;
+  const { setNameWinner, resultGame, setResultGame, count, setCount } = value;
   const boxClick = (e, index) => {
     if (endGame) return;
     if (count % 2 === 0) {
